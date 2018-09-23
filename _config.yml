@@ -4,7 +4,7 @@ email: "admin@interimm.org"
 description: 火星上的旗舰大学 | The Flagship University of Mars
 
 baseurl: "" # the subpath of your site, e.g. /blog/ (If you use organization leave empty)
-url: "https://planiversity.interimm.org" # the base hostname & protocol for your site
+url: "http://planiversity.interimm.org" # the base hostname & protocol for your site
 
 #Google Ad Words Data from scripts code (using Google responsive options) and ad client
 # data-ad-slot: 2973388149
