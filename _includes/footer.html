@@ -1,16 +1,20 @@
-<footer>
-    <div class="container">
-        <p>&copy; 2018  <a rel="nofollow" target="blank" href="http://interimm.org">星际移民中心</a> 用心制作</p>
-        <ul class="list-inline">
-            <li>
-                <a href="https://github.com/InterImm/planiversity" target="_blank">GitHub</a>
-            </li>
-            <li>
-                <a target="_blank" rel="nofollow" href="https://jekyllrb.com/">Jekyll</a>
-            </li>
-            <!-- <li>
-                <a href="#">FAQ</a>
-            </li> -->
-        </ul>
+<footer class="footer">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>{{ site.title_fancy | escape }}</strong> by <a>
+          {%- if site.author -%}
+          {{ site.author | escape }}
+        {%- else -%}
+          Anonymous
+        {%- endif -%}
+       </a>.
+       <span class="icon">
+         <a href="https://github.com/InterImm"><i class="fab fa-github"></i></a>
+       </span>
+      </p>
+
     </div>
+  </div>
 </footer>

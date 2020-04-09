@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>行星际通信相关问题 | 行星大学 Planetary University</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="行星际通信相关问题" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="地球和火星之间相距遥远，最近几年来看，基本上平均最近的时候在 0.5AU，电磁波信号大约延时 250s，最远平均在 2.5AU，电磁波信号大约延时 20 分钟多一点。当然这不是火星和地球相距最近最远。由于火星的轨道的偏心率比较大，最近可以达到 0.37AU，最远可以达到 2.68AU. 1 1AU = 499 光秒，1AU = 1.5*10^8 km &#8617;" />
+<meta property="og:description" content="地球和火星之间相距遥远，最近几年来看，基本上平均最近的时候在 0.5AU，电磁波信号大约延时 250s，最远平均在 2.5AU，电磁波信号大约延时 20 分钟多一点。当然这不是火星和地球相距最近最远。由于火星的轨道的偏心率比较大，最近可以达到 0.37AU，最远可以达到 2.68AU. 1 1AU = 499 光秒，1AU = 1.5*10^8 km &#8617;" />
+<link rel="canonical" href="http://localhost:4000/articles/interplanetary-communication/" />
+<meta property="og:url" content="http://localhost:4000/articles/interplanetary-communication/" />
+<meta property="og:site_name" content="行星大学 Planetary University" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-07-08T00:00:00-04:00" />
+<script type="application/ld+json">
+{"description":"地球和火星之间相距遥远，最近几年来看，基本上平均最近的时候在 0.5AU，电磁波信号大约延时 250s，最远平均在 2.5AU，电磁波信号大约延时 20 分钟多一点。当然这不是火星和地球相距最近最远。由于火星的轨道的偏心率比较大，最近可以达到 0.37AU，最远可以达到 2.68AU. 1 1AU = 499 光秒，1AU = 1.5*10^8 km &#8617;","@type":"BlogPosting","url":"http://localhost:4000/articles/interplanetary-communication/","headline":"行星际通信相关问题","dateModified":"2015-07-08T00:00:00-04:00","datePublished":"2015-07-08T00:00:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/articles/interplanetary-communication/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/bulma/bulma.css">
+  <link rel="stylesheet" href="/assets/bulma/bulma-divider.min.css">
+  <link rel="stylesheet" href="/assets/bulmawatch/united/bulmaswatch.min.css">
+  <link rel="stylesheet" href="/assets/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/code/base16-solarized.light.css">
+
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  
+
+  
+
+
+
+
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] },
+      messageStyle: "none"
+   });
+  </script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"]
+      });
+   });
+   </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        inlineMath: [['$','$'], ['\\(','\\)']]
+      }
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      processEscapes: true
+    }
+  });
+</script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        overlr: ['\\overset\\leftrightarrow{\#1}',1],
+        overl: ['\\overset\leftarrow{\#1}',1],
+        overr: ['\\overset\rightarrow{\#1}',1],
+        bra: ['\\left\\langle \#1\\right|',1],
+        ket: ['\\left| \#1\\right\\rangle',1],
+        braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+        avg: ['\\left< \#1 \\right>',1],
+        slashed: ['\\cancel{\#1}',1],
+        bold: ['\\boldsymbol{\#1}',1],
+        sech: ['\\operatorname{sech}{\#1}',1],
+        csch: ['\\operatorname{csch}{\#1}',1]
+      },
+      equationNumbers: { autoNumber: "AMS" }
+    }
+  });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"> --><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="行星大学 | Planetary University" /></head>
+
+
+
+  <body><header class="site-header" role="banner"><section class="hero is-primary is-medium">
+    <!-- Hero head: will stick at the top -->
+    <!-- <div class="hero-head"> -->
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item has-text-weight-bold" rel="author" href="/">行星大学 | Planetary University</a>
+            <!-- <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo"> -->
+            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+
+              <a class="navbar-item has-text-weight-bold" href="/"><i class="fas fa-home"></i></a>
+
+              
+              
+              
+              <a class="navbar-item has-text-weight-bold" href="/members/" >成员</a>
+              
+              
+              
+              
+              <a class="navbar-item has-text-weight-bold" href="/articles/" >讨论</a>
+              
+              
+              
+              
+              <a class="navbar-item has-text-weight-bold" href="/join/" >加入我们</a>
+              
+              
+              
+              
+              <div class="navbar-item has-text-weight-bold has-dropdown is-hoverable">
+                <a class="navbar-link" href="https://interimm.org" target="_blank" >
+                  星际移民中心
+                </a>
+                <div class="navbar-dropdown is-primary" style="color:white;background-color:#e9541f;">
+                  
+                  <a class="navbar-item" href="https://book.interimm.org" target="_blank" >
+                    星际移民之书
+                  </a>
+                  
+                  <a class="navbar-item" href="http://interimm.org/mars-map/" target="_blank" >
+                    火星地图
+                  </a>
+                  
+                  <a class="navbar-item" href="http://interimm.org/archives" target="_blank" >
+                    其他工具
+                  </a>
+                  
+                </div>
+              </div>
+              
+              
+
+              
+
+               
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- </div> -->
+  </section>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+  </script>
+
+</header>
+<main class="main--content" aria-label="Content">
+    <div class="columns">
+      <div class="column is-12">
+        <div class="content is-medium">
+          <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title has-text-centered is-size-1" itemprop="name headline">行星际通信相关问题</h1>
+    <p class="post-meta has-text-centered">
+      <time class="dt-published" datetime="2015-07-08T00:00:00-04:00" itemprop="datePublished">Jul 8, 2015
+      </time>• 
+        
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Lei Ma</span></span>
+        
+        
+       • <span style="font-style: regular;">{</span>
+       <span style="padding-right: 0.2em;padding-left: 0.2em;"><a href="http://localhost:4000/wiki/#星际通信">⸢星际通信⸥</a></span>
+       
+       }
+      
+      
+       • <span style="font-style: regular;">[</span>
+       <span style="padding-right: 0.2em;padding-left: 0.2em;"><a href="http://localhost:4000/articles/#火星">#火星</a></span>
+       
+       <span style="padding-right: 0.2em;padding-left: 0.2em;"><a href="http://localhost:4000/articles/#行星际通信">#行星际通信</a></span>
+       
+       ]
+      
+    </p>
+  </header>
+
+  <div class="columns">
+    <div class="column is-8">
+
+
+  
+  <div class="is-divider" data-content="SUMMARY"></div>
+        <div class="notification is-light">
+          <p>
+            地球和火星相距遥远，电磁波信号的传输存在很多问题。
+          </p>
+        </div>
+  
+
+  <div class="is-divider" data-content="ARTICLE"></div>
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>地球和火星之间相距遥远，最近几年来看，基本上平均最近的时候在 0.5AU，电磁波信号大约延时 250s，最远平均在 2.5AU，电磁波信号大约延时 20 分钟多一点。当然这不是火星和地球相距最近最远。由于火星的轨道的偏心率比较大，最近可以达到 0.37AU，最远可以达到 2.68AU. <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<figure>
+  <figcaption>
+地球和火星之间的距离变化。来自 WolframAlpha。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/mars-earth.jpg" alt="" /></p>
+</figure>
+
+<p>所以这样遥远的距离，网站等互联网应用就会出现新的问题：</p>
+
+<ol>
+  <li>中继卫星设计：中继卫星除了要满足足够好的中继效果，例如提供完全无终端的中继，还要设计成尽量小的延时。</li>
+  <li>网络协议：现在使用的网络协议并不在适用，新的协议例如 DTN 协议更加合适。</li>
+  <li>网站设计：由于延时的存在，如何才能最大程度提高地球火星的用户体验。</li>
+</ol>
+
+<h2 id="信号传播问题">信号传播问题</h2>
+
+<p>首先的问题是信号衰减，因为距离遥远，信号会衰减很多，然而如果激光通信可以使用的话，衰减就不再是个问题了。关于 NASA 的激光通信的活动请参考 <a href="http://esc.gsfc.nasa.gov/267/LCRD.html">LCRD at Goddard Space Flight Center</a> 。</p>
+
+<ol>
+  <li>火星全球通信没问题，跟地球差不多吧，用卫星来做，或者基站（没有电离层好麻烦需要好多基站）。</li>
+  <li>火星地球这种行星际通信就问题很多。火星和地球之间的通信跟两者在轨道上的相位有关。如果中间隔了个太阳，那通信就麻烦了。这时候需要中继卫星。</li>
+</ol>
+
+<p>中继卫星的设计方法很多，从轨道类型基本上分为两类：Kepler 轨道上的中继卫星和非 Kepler 轨道的中继卫星。</p>
+
+<h3 id="kepler-轨道中继卫星">Kepler 轨道中继卫星</h3>
+
+<p>大多设计都是 Kepler 轨道上的中继卫星，也就是不需要额外的燃料来维持轨道，这类卫星在引力作用下自由落体围绕天体转动。具体卫星的轨道设计是很多种的，例如下面这种太阳极轨道卫星<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>：</p>
+
+<figure>
+  <figcaption>
+太阳极轨道卫星。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/solarpolar.jpg" alt="" /></p>
+</figure>
+
+<p>这篇文章是一个利用太阳的极轨道上的三颗卫星做中继，结合行星的同步卫星来通信的。这种设计最少只需要三颗就可以满足全太阳系的中继的需求了，但是需要三颗卫星的相位错开 120 度<sup id="fnref:1:1"><a href="#fn:1" class="footnote">1</a></sup>，如下图：</p>
+
+<figure>
+  <figcaption>
+太阳极轨道卫星相位。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/solarpolarphase.jpg" alt="" /></p>
+</figure>
+
+<p>这样在太阳系任何一颗行星的位置都可以通过这三颗中的至少一颗来中继。</p>
+
+<p>同时这种设计的缺点也很明显，那就是太阳极轨道卫星的发射和维修的燃料消耗都是巨大的，好在不需要很多颗。</p>
+
+<p><strong>所以在没有太阳不会遮挡火星地球通信的时候，可以直接地球和火星之间，但是在太阳遮挡了地球和火星通信的时候，需要使用太阳极轨道中继卫星。所需要多花的时间可以忽略不计。</strong></p>
+
+<figure>
+  <figcaption>
+没有太阳遮挡的时候的通信方式。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/noblocking.jpg" alt="" /></p>
+</figure>
+
+<figure>
+  <figcaption>
+有太阳遮挡的时候的通信方式。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/blocking.jpg" alt="" /></p>
+</figure>
+
+<h3 id="非-kepler-轨道中继卫星">非 Kepler 轨道中继卫星</h3>
+
+<p>第二篇参考文献提到了很多的不在 Keplerian 轨道的通信卫星。如果使用太阳帆的话，倒也不需要携带燃料。不过这是理论阶段，并不知道太阳帆卫星作为轨道维持的动力能不能成功。
+之所以叫做 Non-Keplerian 轨道上的卫星，是因为这些卫星并不是单单在引力作用下运行的，而是有个持续的推动力。例如这里面的两颗卫星的额外的推动力至少有个向上的分力。</p>
+
+<figure>
+  <figcaption>
+非开普勒轨道上的卫星。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/nonkepler.jpg" alt="" /></p>
+</figure>
+
+<p>上图中，Sun-Mars L1/L2Hover 那个在轨道上方 0.176AU 的地方。Sun-Earth L1/L2 Hover 那个 0.116AU。论文[2]中提到使用太阳帆或者离子发动机都行。由于火星太阳拉氏点（1、2）距离火星很近（大约都是距离火星 0.007AU），相比于这个设计中出现的其它的距离要小得多，所以在下面的示意图中，全部使用近似在火星上方的示意图。地球同。</p>
+
+<figure>
+  <figcaption>
+非开普勒轨道上的卫星。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/nonkepleriancom.jpg" alt="" /></p>
+</figure>
+
+<p>总之中继卫星基本上是必备品。上面的 Non-Keplerian 卫星是一种比较省钱而且延时小的设计，由于中继卫星一直在火星和地球正上方，基本上信号是往上，到达卫星，然后直线到达火星上面的中继卫星，再由中继卫星下来。从地球出发到火星，仅仅比地球火星之间的直线距离增加 2.3 光分的距离，而且是在任意时刻仅仅比直接从地球到火星直线传播的信号多花 2.3 分钟，非常快。</p>
+
+<p>不过，在没有太阳遮挡的时候（火星地球在太阳同一侧的时候），是不需要这两颗中继卫星的，直接通信是最省的方案。只有在有太阳遮挡的时候才启用上述两颗 Non-Keplerian 中继卫星。</p>
+
+<h2 id="通信协议问题">通信协议问题</h2>
+
+<p>如果是网络通信的话，是需要很小心的，因为太空通信的两地相距很远，而且丢包率很高，传统的通信方式，会比较费时间或者通信终端。</p>
+
+<p>所以 <a href="http://ipnsig.org/">InterPlanetary Networking Special Interest Group (IPNSIG)</a> 重新设计了一个星际网络协议，叫做 DTN 协议，Delay-Tolerant Networking，这个协议并不假定连续的 N-N 链接（星际中容易丢包），如果暂时找不到目标，数据并不会丢掉，而是储存起来，直到下次能够跟其他地方建立连接。因为太空中丢包或者被遮挡而不能通信的情况很多。所以 DTN 比较适合行星际的通信。 实际上如果可能，可以在很多卫星上装上这样的模块，形成一个行星际网络。</p>
+
+<p>NASA 已经在火星探测器上测试过 DTN 协议了。DTN 的创始人之一在一次 TED 演讲中向大家展示了未来星际网络的愿景：利用 DTN 协议把太阳系的各个探测器联系起来，每个都可以作为中继，最终形成一个太阳系的行星际网络基础结构，然后利用这个结构可以向恒星际扩展（因为这样的话整个太阳系就成为一个巨型的接收器）。</p>
+
+<h2 id="网站的部署">网站的部署</h2>
+
+<p>其它的问题还有很多，比较重要的一个是延时的问题。由于人类传播信息的速度有限，所以从一个地方到另一个地方会花费时间，而行星际通信里面就会凸显出来。</p>
+
+<p>下面是从 2014 年 6 月 30 日到 2016 年 6 月 19 日之间，地球和火星之间的距离变化，横轴是时间，纵轴是距离，单位是 AU。而光前进一个 AU 所需要的时间大约是 8 分钟。可以想想这样的延时下面，地球的 Dota 玩家和火星的 Dota 玩家之间连线是不太现实了，即使是玩回合制的游戏也是很沉闷无聊的。</p>
+
+<figure>
+  <figcaption>
+地球和火星之间的距离变化。来自 WolframAlpha。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/2years.jpg" alt="" /></p>
+</figure>
+
+<p>在多年之内看的话，距离也差不多是这个量级上，</p>
+
+<figure>
+  <figcaption>
+地球和火星之间的距离变化。来自 WolframAlpha。
+</figcaption>
+  <p><img src="../assets/interplanetary-communication/mars-earth.jpg" alt="" /></p>
+</figure>
+
+<p>对于普通的网站，我们现今地球上也有类似的情况，曾经有那样的说法：世界上最遥远的距离是电信和网通之间的距离（虽然现在已经没有什么距离了）。所以我们需要专门的线路为不同的星球上的人服务。</p>
+
+<p>例如在火星上缓存地球上的网站；或者由网站购买火星服务器，直接在火星上提供服务。</p>
+
+<p>不过，使用缓存，在行星开放建设的早期，可能只能用户自己解决，就是其它行星上用自己的服务器缓存网页。不过随着行星开发，后来应该会有专门的 cache 服务商。或者网络提供方或者运营商会直接提供这样的行星之间无缝连接，例如有的互联网公司可以购买了火星的服务器来托管一份网站镜像，对于交互式的网站（比如社交网站）更加方便了。
+不过这就需要火星有个独立的信息硬件架构.</p>
+
+<p>顺便说一下，Mars One 的设想是，在火星上安装一个缓存服务器，先把网站缓存在火星服务器上，火星上的人浏览的时候从缓存服务器获取网页。这在早期确实是一个比较实惠的方案。</p>
+
+<h2 id="参考">参考</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>1AU = 499 光秒，1AU = 1.5*10^8 km <a href="#fnref:1" class="reversefootnote">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://www.nss.org/settlement/manufacturing/SM12.213.ContinuousInterPlanetaryCommunications.pdf">Concept for Continuous Inter-planetary Communications</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+    </div>
+    <div class="column is-4">
+
+      
+      <div class="is-divider" data-content="AUTHORS"></div>
+        
+          
+              <div class="box is-size-7">
+                <article class="media">
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>Lei Ma</strong>
+                        
+                          <a href="https://github.com/emptymalei"><i class="fab fa-github-square"></i></a>
+                        
+                        <br>
+                        
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+        
+      
+      
+      
+      <div class="is-divider" data-content="REFERENCES"></div>
+        <article class="message">
+          <div class="message-header">
+            <p>References:</p>
+          </div>
+          <div class="message-body">
+            <ol>
+            
+              <li><a href="http://www.nss.org/settlement/manufacturing/SM12.213.ContinuousInterPlanetaryCommunications.pdf" style="text-decoration:none;">Concept for Continuous Inter-planetary Communications</a></li>
+            
+            </ol>
+          </div>
+        </article>
+    
+    
+<div id="comments" class="is-divider" data-content="COMMENTS"></div>
+<script src="https://utteranc.es/client.js"
+      repo="InterImm/planiversity"
+      issue-term="pathname"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+</script>
+
+    </div>
+  </div>
+
+
+
+
+  <a class="u-url" href="/articles/interplanetary-communication/" hidden></a>
+
+<nav role="navigation" aria-label="pagination" style="margin-top:5em;">
+  <div class="columns is-desktop">
+    <div class="column is-4">
+      </div>
+      <div class="column is-2 is-pulled-left">
+      
+      </div>
+      <div class="column is-2 is-pulled-right">
+      
+    </div>
+    <div class="column is-4">
+      </div>
+      </div>
+</nav><!-- /.pagination -->
+
+
+
+</article>
+        </div>
+      </div>
+    </div>
+    </main><footer class="footer">
+  <data class="u-url" href="/"></data>
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>让火星生活更美好</strong> by <a>星际移民中心</a>.
+       <span class="icon">
+         <a href="https://github.com/InterImm"><i class="fab fa-github"></i></a>
+       </span>
+      </p>
+
+    </div>
+  </div>
+</footer>
+<!-- <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="/assets/js/home-chart.js"></script> -->
+
+<script src="/assets/js/collapse.js"></script>
+
+
+
+
+  </body>
+
+</html>
