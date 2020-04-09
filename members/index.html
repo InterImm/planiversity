@@ -1,0 +1,35 @@
+---
+layout: page
+title: "行星大学成员"
+description:
+exclude: true
+---
+
+
+<div class="columns is-multiline is-mobile">
+  {% for post in site.members %}
+  <div class="column is-one-third">
+
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">{{post.name}} {% if post.link %}
+              [<a href="{{ post.link }}"><i class="fas fa-link"></i></span></a>]
+            {% endif %}</p>
+            <div class="tags">
+              {% for field in post.field %} <span class="tag">{{ field }}</span> {% endfor %}
+            </div>
+            <p class="subtitle is-6">{{post.summary}}</p>
+          </div>
+        </div>
+        <div class="content"> {{post.about}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+
