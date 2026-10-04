@@ -4,29 +4,10 @@ author: "星际移民中心"
 email: admin@interimm.org
 description: > # this means to ignore newlines until "twitter_username:"
   火星上的旗舰大学 | The Flagship University of Mars
-# baseurl: '/'
-# social links
-twitter_username: jekyllrb
-github_username:  jekyll
-rss: rss
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-# instagram_username: jekyll
-# linkedin_username: jekyll
-# pinterest_username: jekyll
-# youtube_username: jekyll
-# googleplus_username: +jekyll
-
-# Mastodon instances
-# mastodon:
-# - username: jekyll
-#   instance: example.com
-# - username: jekyll2
-#   instance: example.com
-
-google_analytics: UA-158106645-1
-
+url: https://planiversity.interimm.org
+baseurl: ""
+lang: zh-CN
+github_username: InterImm
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
@@ -54,7 +35,7 @@ plugins:
 
 
 
-exclude: ['README.md','README-minima.md','History.markdown', 'Gemfile.lock', 'Gemfile','assets/mermaid/www']
+exclude: [README.md, Gemfile, Gemfile.lock, old, _site, vendor, assets/mermaid/www, assets/scripts]
 
 
 
@@ -107,43 +88,20 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+      layout: post
   # _dataset
   - scope:
       path: ""
       type: "members"
     values:
       layout: members
-      read_time: false
-      author_profile: false
-      share: false
-      comments: false
-      sidebar:
-        nav: "members"
   # _reading
   - scope:
       path: ""
       type: articles
     values:
       layout: articles
-      read_time: false
-      author_profile: false
-      share: false
       comments: true
-      sidebar:
-        nav: "articles"
 
 
 
@@ -212,5 +170,3 @@ compress_html:
   clippings: all
   ignore:
     envs: development
-
-exclude: [old]

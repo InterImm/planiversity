@@ -1,10 +1,29 @@
-{% if page.comments == true or page.collection == 'articles'  %}
-<div id="comments" class="is-divider" data-content="COMMENTS"></div>
-<script src="https://utteranc.es/client.js"
-      repo="InterImm/planiversity"
-      issue-term="pathname"
-      theme="github-light"
-      crossorigin="anonymous"
-      async>
-</script>
-{% endif %}
+{%- include lang.html -%}
+{%- if page.comments == true or page.collection == 'articles' %}
+<section class="comments" id="comments">
+  <h2 class="kicker">{{ t.comments }}</h2>
+  <div class="utterances-slot"></div>
+  <script>
+  // Utterances (GitHub issues of InterImm/planiversity), in the theme the page is showing.
+  (function () {
+    var slot = document.currentScript.previousElementSibling;
+    function dark() {
+      var now = document.documentElement.dataset.theme || document.documentElement.dataset.themeNow;
+      return now ? now === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    var s = document.createElement("script");
+    s.src = "https://utteranc.es/client.js";
+    s.async = true;
+    s.crossOrigin = "anonymous";
+    s.setAttribute("repo", "InterImm/planiversity");
+    s.setAttribute("issue-term", "pathname");
+    s.setAttribute("theme", dark() ? "github-dark" : "github-light");
+    slot.appendChild(s);
+    document.addEventListener("interimm:theme", function () {
+      var frame = slot.querySelector("iframe.utterances-frame");
+      if (frame) frame.contentWindow.postMessage({ type: "set-theme", theme: dark() ? "github-dark" : "github-light" }, "https://utteranc.es");
+    });
+  })();
+  </script>
+</section>
+{%- endif %}

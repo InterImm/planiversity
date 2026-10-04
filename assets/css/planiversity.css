@@ -1,0 +1,88 @@
+/* Planetary University: only what this site adds to the shared InterImm kit
+   (https://interimm.org/kit/). Colours come from the kit tokens so light and dark both work. */
+
+/* ---------- the university's own bar under the shared header ---------- */
+.uni-bar { border-bottom: 1px solid var(--border); background: var(--bg); }
+.uni-bar-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.25rem 1.5rem; min-height: 3rem; padding-block: 0.4rem; }
+.uni-name { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text); font-family: var(--font-display); font-size: 1.05rem; text-decoration: none; }
+.uni-name .icon { color: var(--accent); }
+.uni-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0; padding: 0; list-style: none; }
+.uni-links a { color: var(--muted); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; }
+.uni-links a:hover, .uni-links a[aria-current="page"] { color: var(--text); }
+.uni-links a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.35em; }
+:lang(zh) .uni-links a { letter-spacing: 0.12em; font-size: 0.85rem; }
+
+/* ---------- home ---------- */
+.uni-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2rem 3rem; }
+.uni-hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.uni-seal { margin: 0; width: clamp(9rem, 22vw, 15rem); color: var(--text); }
+.seal { width: 100%; height: auto; }
+.seal-text { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.22em; }
+.seal-planet { fill: color-mix(in srgb, var(--accent) 14%, transparent); stroke: var(--accent); }
+.seal-orbit, .seal-moon { stroke: var(--accent); }
+@media (prefers-reduced-motion: no-preference) {
+  .seal-orbit { animation: seal-drift 60s linear infinite; transform-origin: 120px 120px; }
+  @keyframes seal-drift { to { stroke-dashoffset: -140; } }
+}
+@media (max-width: 40rem) {
+  .uni-hero-grid { grid-template-columns: 1fr; }
+  .uni-seal { order: -1; width: 7.5rem; }
+}
+.uni-join .section-lede { max-width: var(--measure); }
+
+/* ---------- lists ---------- */
+.seminar-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--border-strong); }
+.seminar-list > li { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 0.5rem 1.5rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.seminar-list time { margin: 0.35rem 0 0; }
+.seminar-list h3 { margin: 0 0 0.35rem; font-size: 1.3rem; }
+.seminar-list h3 a { color: var(--text); text-decoration: none; }
+.seminar-list h3 a:hover { text-decoration: underline; text-decoration-color: var(--border-strong); }
+.seminar-list p { margin: 0 0 0.5rem; color: var(--muted); }
+.seminar-list .chips { margin: 0; }
+@media (max-width: 36rem) { .seminar-list > li { grid-template-columns: 1fr; } }
+
+.member .chips { margin: 0 0 0.75rem; }
+.member p { color: var(--muted); }
+.uni-page .card-grid + .uni-after, .uni-after { margin-top: 2rem; }
+.uni-page > .wrap > .card-grid { max-width: none; }
+
+/* ---------- records (seminars and researchers) ---------- */
+.meta-stack { grid-template-columns: 1fr; margin-top: 0; }
+.meta-stack .author { display: block; }
+.doc-side { align-self: start; }
+@media (min-width: 52rem) { .doc-side { position: sticky; top: 1.5rem; } }
+.member-record .meta-list { max-width: 40rem; }
+.member-about { white-space: pre-line; }
+
+.refs { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border-strong); max-width: var(--measure); }
+.refs h2 { margin-bottom: 0.75rem; }
+.refs li { margin-bottom: 0.4rem; }
+
+.pager { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1rem; margin-top: 3rem; max-width: var(--measure); }
+.pager a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); text-decoration: none; }
+.pager a:hover { border-color: var(--border-strong); }
+.pager .kicker { display: block; margin-bottom: 0.25rem; }
+.pager-next { text-align: right; }
+
+.comments { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+.comments .utterances { max-width: none; }
+
+/* ---------- article body ---------- */
+.prose figure { margin: 2rem 0; }
+.prose figure img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); background: #fff; }
+.prose figcaption { order: 2; margin-top: 0.5rem; color: var(--muted); font-family: var(--font-sans, inherit); font-size: 0.9rem; }
+.prose figure { display: flex; flex-direction: column; }
+.prose figure > figcaption:first-child { order: 2; }
+.prose figure p { margin: 0; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+.prose th, .prose td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; }
+.prose blockquote { margin: 1.5rem 0; padding-left: 1.25rem; border-left: 2px solid var(--accent); color: var(--muted); }
+.prose .footnotes { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.9rem; }
+.prose .footnotes p, .prose .footnotes li { font-size: 0.95rem; line-height: 1.6; }
+.prose pre { overflow-x: auto; padding: 1rem 1.25rem; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.6; }
+.prose :not(pre) > code { padding: 0.1em 0.35em; background: var(--bg-alt); border-radius: 3px; font-family: var(--font-mono); font-size: 0.88em; }
+.highlight .c, .highlight .c1, .highlight .cm { color: var(--muted); font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kn { color: var(--accent); }
+.highlight .s, .highlight .s1, .highlight .s2 { color: var(--link); }
+.highlight .lineno, .highlight .gutter { color: var(--muted); user-select: none; }
+.highlight table, .highlight td { border: 0; padding: 0; margin: 0; }

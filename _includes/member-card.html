@@ -1,0 +1,11 @@
+{%- assign m = include.member -%}
+<article class="card card-link-wrap member">
+  <h3 class="card-title"><a class="card-link" href="{{ m.url | relative_url }}">{{ m.name }}</a></h3>
+  {%- if m.field %}
+  <ul class="chips chips-small">{% for f in m.field %}<li>{{ f }}</li>{% endfor %}</ul>
+  {%- endif %}
+  {%- if m.summary %}
+  <p>{{ m.summary }}</p>
+  {%- endif %}
+  <p class="card-cta" aria-hidden="true">{{ include.cta }} <span>→</span></p>
+</article>
