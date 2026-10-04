@@ -1,0 +1,75 @@
+# Interface strings. Pages pick a language with `lang: en` in front matter; everything else is Chinese.
+cn:
+  name: 行星大学
+  center: 星际移民中心
+  home: /
+  other_home: /en/
+  skip: 跳到正文
+  tagline: 火星上的旗舰大学
+  lede: 行星大学是星际移民中心在伊希地设立的研究机构，研究在火星和太阳系里怎样生活得更好。
+  nav_departments: 院系
+  nav_members: 研究员
+  nav_seminars: 研讨会
+  nav_join: 加入
+  departments: 院系
+  departments_lede: 六个院系，从小行星矿场到系外行星。
+  members: 研究员
+  members_lede: 在行星大学登记了研究方向的研究员。
+  all_members: 全部研究员
+  record: 档案
+  seminars: 研讨会
+  seminars_lede: 研讨会的记录。
+  all_seminars: 全部研讨会记录
+  join: 加入行星大学
+  join_lede: 有想研究的问题？在 GitHub 上提交一份研究员登记，审核后会加入研究员名录。
+  join_button: 提交登记
+  field: 研究方向
+  website: 网站
+  summary: 摘要
+  authors: 作者
+  references: 参考资料
+  date: 日期
+  updated: 更新
+  category: 类别
+  tags: 标签
+  comments: 讨论
+  previous: 上一篇
+  next: 下一篇
+  source: 源代码
+en:
+  name: Planetary University
+  center: InterImm
+  home: /en/
+  other_home: /
+  skip: Skip to content
+  tagline: The flagship university of Mars
+  lede: The Planetary University is the research institute of the Interplanetary Immigration Center at Isidis. It studies how to live well on Mars and across the solar system.
+  nav_departments: Departments
+  nav_members: Researchers
+  nav_seminars: Seminars
+  nav_join: Join
+  departments: Departments
+  departments_lede: Six departments, from asteroid mines to exoplanets.
+  members: Researchers
+  members_lede: Researchers who have registered a line of work with the university. Their records are in Chinese.
+  all_members: All researchers
+  record: Record
+  seminars: Seminars
+  seminars_lede: Seminar records, in Chinese.
+  all_seminars: All seminar records
+  join: Join the Planetary University
+  join_lede: Have a question you want to work on? File a researcher registration on GitHub; once reviewed it is added to the list of researchers.
+  join_button: Register
+  field: Field
+  website: Website
+  summary: Summary
+  authors: Authors
+  references: References
+  date: Date
+  updated: Updated
+  category: Category
+  tags: Tags
+  comments: Discussion
+  previous: Previous
+  next: Next
+  source: Source

@@ -1,50 +1,82 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+---
+layout: default
+---
+{%- include lang.html %}
+<header class="page-hero uni-hero">
+  <div class="wrap uni-hero-grid">
+    <div>
+      <p class="kicker">{{ t.center }} · {{ t.tagline }}</p>
+      <h1>{{ t.name }}</h1>
+      <p class="lede">{{ t.lede }}</p>
+      <p class="uni-hero-actions">
+        <a class="btn btn-primary" href="#departments">{{ t.departments }} <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="{{ '/join/' | relative_url }}">{{ t.nav_join }}</a>
+      </p>
+    </div>
+    <figure class="uni-seal" aria-hidden="true">
+      {%- include seal.svg %}
+    </figure>
+  </div>
+</header>
 
-  {%- include head.html -%}
+<section class="section" id="departments">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="kicker">01</p>
+      <h2 class="section-title">{{ t.departments }}</h2>
+      <p class="section-lede">{{ t.departments_lede }}</p>
+    </header>
+    <div class="bento">
+      {%- for d in site.data.departments %}
+      <article class="tile" id="dept-{{ d.id }}">
+        <span class="tile-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{{ d.icon }}</svg></span>
+        <h3 class="tile-title">{{ d[lk] }}</h3>
+        <p>{% assign motto = lk | append: "_motto" %}{{ d[motto] }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
 
-  <body>
-
-    {%- include header.html -%}
-    {% include home/hero.html %}
-
-
-    <main class="main--content" aria-label="Content">
-    <div class="columns">
-      <div class="column is-12">
-        <div class="content is-medium">
-
-          <div class="section">
-
-            {% include home/showcase.html %}
-
-        </div>
+<section class="section section-alt" id="members">
+  <div class="wrap">
+    <header class="section-head section-head-split">
+      <div>
+        <p class="kicker">02</p>
+        <h2 class="section-title">{{ t.members }}</h2>
+        <p class="section-lede">{{ t.members_lede }}</p>
       </div>
+      <a class="text-link" href="{{ '/members/' | relative_url }}">{{ t.all_members }} <span aria-hidden="true">→</span></a>
+    </header>
+    <div class="card-grid">
+      {%- for m in site.members limit: 6 %}
+      {%- include member-card.html member=m cta=t.record %}
+      {%- endfor %}
     </div>
-    </div>
+  </div>
+</section>
 
-
-
-    <div class="columns">
-      <div class="column is-12">
-        <div class="content is-medium">
-
-          <div class="section">
-
-            {{ content }}
-
-        </div>
+<section class="section" id="seminars">
+  <div class="wrap">
+    <header class="section-head section-head-split">
+      <div>
+        <p class="kicker">03</p>
+        <h2 class="section-title">{{ t.seminars }}</h2>
+        <p class="section-lede">{{ t.seminars_lede }}</p>
       </div>
-    </div>
-    </div>
-    </main>
+      <a class="text-link" href="{{ '/articles/' | relative_url }}">{{ t.all_seminars }} <span aria-hidden="true">→</span></a>
+    </header>
+    {%- assign seminars = site.articles | sort: "date" | reverse %}
+    {%- include seminar-list.html items=seminars limit=5 %}
+  </div>
+</section>
 
-    {% include home/strip.html %}
-
-
-
-
-{%- include footer.html -%}
-</body>
-
-</html>
+<section class="section section-alt uni-join">
+  <div class="wrap">
+    <p class="kicker">04</p>
+    <h2 class="section-title">{{ t.join }}</h2>
+    <p class="section-lede">{{ t.join_lede }}</p>
+    <p><a class="btn btn-primary btn-lg" href="https://github.com/InterImm/planiversity/issues/new?template=new_member.md">{{ t.join_button }} <span aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+{{ content }}

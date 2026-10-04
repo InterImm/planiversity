@@ -1,35 +1,12 @@
 ---
 layout: page
-title: "行星大学成员"
-description:
+title: 研究员
+description: 在行星大学登记了研究方向的研究员。想加入？在 GitHub 上提交一份研究员登记。
 exclude: true
 ---
-
-
-<div class="columns is-multiline is-mobile">
-  {% for post in site.members %}
-  <div class="column is-one-third">
-
-    <div class="card">
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">{{post.name}} {% if post.link %}
-              [<a href="{{ post.link }}"><i class="fas fa-link"></i></span></a>]
-            {% endif %}</p>
-            <div class="tags">
-              {% for field in post.field %} <span class="tag">{{ field }}</span> {% endfor %}
-            </div>
-            <p class="subtitle is-6">{{post.summary}}</p>
-          </div>
-        </div>
-        <div class="content"> {{post.about}}
-        </div>
-      </div>
-    </div>
-
-  </div>
-  {% endfor %}
-
+<div class="card-grid">
+  {%- for m in site.members %}
+  {%- include member-card.html member=m cta="档案" %}
+  {%- endfor %}
 </div>
-
+<p class="uni-after"><a class="btn" href="{{ '/join/' | relative_url }}">加入行星大学 <span aria-hidden="true">→</span></a></p>

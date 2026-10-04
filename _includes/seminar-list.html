@@ -1,0 +1,14 @@
+<ol class="seminar-list">
+  {%- for s in include.items limit: include.limit %}
+  <li>
+    <time class="kicker" datetime="{{ s.date | date_to_xmlschema }}">{{ s.date | date: "%Y-%m-%d" }}</time>
+    <div>
+      <h3><a href="{{ s.url | relative_url }}">{{ s.title }}</a></h3>
+      {%- if s.summary %}<p>{{ s.summary }}</p>{% endif %}
+      {%- if s.tags.size > 0 %}
+      <ul class="chips chips-small">{% for tag in s.tags %}<li>{{ tag }}</li>{% endfor %}</ul>
+      {%- endif %}
+    </div>
+  </li>
+  {%- endfor %}
+</ol>
