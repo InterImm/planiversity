@@ -86,3 +86,37 @@
 .highlight .s, .highlight .s1, .highlight .s2 { color: var(--link); }
 .highlight .lineno, .highlight .gutter { color: var(--muted); user-select: none; }
 .highlight table, .highlight td { border: 0; padding: 0; margin: 0; }
+
+/* ---------- department pages ---------- */
+.dept-icon { display: inline-flex; margin-bottom: 1rem; color: var(--accent); }
+.dept-icon .icon { width: 3rem; height: 3rem; }
+.dept-links { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.dept-links-title { margin-top: 2.5rem; }
+.facility-cards { display: grid; gap: 1.25rem; margin: 0; padding: 0; list-style: none; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+.facility-loading { color: var(--muted); }
+.facility-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.facility-head .card-title a { color: var(--text); text-decoration: none; }
+.facility-head .card-title a:hover { text-decoration: underline; text-decoration-color: var(--border-strong); }
+.facility-status { flex: none; padding: 0.15rem 0.55rem; border: 1px solid var(--border-strong); border-radius: 999px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; white-space: nowrap; }
+.facility-status::before { content: ""; display: inline-block; width: 0.5em; height: 0.5em; margin-right: 0.4em; border-radius: 50%; background: #3d8b5a; vertical-align: 0.05em; }
+.facility-status[data-status="reduced"]::before, .facility-status[data-status="maintenance"]::before { background: #c58a1d; }
+.facility-status[data-status="offline"]::before { background: var(--accent); }
+.facility-place { margin: 0 0 0.75rem; }
+.facility-summary { color: var(--muted); font-size: 0.95rem; }
+.facility-kpis { margin: 0.25rem 0 0; border-top: 1px solid var(--border); }
+.facility-kpis > div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--border); }
+.facility-kpis dt { color: var(--muted); font-size: 0.9rem; }
+.facility-kpis dd { margin: 0; text-align: right; font-family: var(--font-mono); font-size: 0.9rem; }
+.facility-design { display: block; color: var(--muted); font-size: 0.75rem; }
+
+/* ---------- enrolment ---------- */
+.enrol-grid { display: grid; gap: 2rem; grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); align-items: start; }
+@media (max-width: 52rem) { .enrol-grid { grid-template-columns: 1fr; } }
+.enrol-form .field { display: block; margin-bottom: 1.1rem; }
+.enrol-form .kicker { display: block; margin-bottom: 0.35rem; }
+.enrol-form input, .enrol-form select { width: 100%; padding: 0.6rem 0.75rem; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius); }
+.enrol-form input:focus, .enrol-form select:focus { outline: 2px solid var(--focus, var(--accent)); outline-offset: 1px; }
+.enrol-form .fine { color: var(--muted); font-size: 0.85rem; }
+.enrol-card { margin: 0; }
+.enrol-card canvas { display: block; width: 100%; height: auto; border-radius: 1.1rem; box-shadow: 0 1px 0 var(--border), 0 18px 40px -24px rgb(0 0 0 / 0.45); }
+.enrol-card figcaption { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
