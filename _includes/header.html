@@ -20,9 +20,10 @@
       {{ t.name }}
     </a>
     <ul class="uni-links">
-      <li><a href="{{ t.home | relative_url }}#departments">{{ t.nav_departments }}</a></li>
+      <li><a href="{{ t.home | relative_url }}#departments"{% if page.layout == 'department' %} aria-current="page"{% endif %}>{{ t.nav_departments }}</a></li>
       <li><a href="{{ '/members/' | relative_url }}"{% if page.url contains '/members/' %} aria-current="page"{% endif %}>{{ t.nav_members }}</a></li>
       <li><a href="{{ '/articles/' | relative_url }}"{% if page.url contains '/articles/' %} aria-current="page"{% endif %}>{{ t.nav_seminars }}</a></li>
+      <li><a href="{% if lk == 'en' %}/en{% endif %}/enrol/"{% if page.layout == 'enrol' %} aria-current="page"{% endif %}>{{ t.nav_enrol }}</a></li>
       <li><a href="{{ '/join/' | relative_url }}"{% if page.url == '/join/' %} aria-current="page"{% endif %}>{{ t.nav_join }}</a></li>
     </ul>
   </div>

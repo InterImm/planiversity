@@ -1,37 +1,75 @@
-# The six departments shown on the home page. `icon` is the inner SVG of a 24x24 line icon.
+# The six departments. Each has a page at /departments/<id>/ (and /en/departments/<id>/).
+# `icon` is the inner SVG of a 24x24 line icon. `facilities` are ids in Mars Open Facilities
+# (https://interimm.org/mars-open-facilities/), read live in the browser. `fields` are the
+# researcher fields (in _members) that belong to the department. `signal: true` shows the
+# live Earth to Mars readings from the kit.
 - id: resources
   cn: 太空资源
   cn_motto: 探测，开采和运输
   en: Space Resources
   en_motto: Prospecting, mining and hauling
+  cn_about: "太空资源系研究怎样在火星和小行星上找到水、金属和推进剂，把它们开采出来，再送到需要的地方。系里的学生在川陀城冰矿、亚特兰蒂斯城钢铁厂和南河城推进剂工厂做实习，课堂上的数字每小时都在矿场里更新。"
+  en_about: "The Department of Space Resources studies how to find water, metals and propellant on Mars and the asteroids, get them out of the ground and move them to where they are needed. Students intern at the Trantor ice mine, the Atlantis ironworks and the Procyon propellant works, where the numbers from class are updated every hour."
   icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5 19 19M5 19l2.5-2.5M16.5 7.5 19 5"/>'
+  facilities: [trantor-icemine, atlantis-ironworks, procyon-propellant]
+  fields: [空间矿业, 太空资源]
 - id: planning
   cn: 火星规划
   cn_motto: 生活在火星，规划火星
   en: Mars Planning
   en_motto: Living on Mars, planning Mars
+  cn_about: "火星规划系研究火星城市怎样选址、怎样供电、怎样和太阳系连起来。从伊希地的第一座前哨站到今天的十一座城市，系里保存着每一份城市规划。现在的课题是星港和城市能源。"
+  en_about: "The Department of Mars Planning studies where Martian cities should go, how they are powered and how they connect to the rest of the solar system. It keeps every city plan, from the first outpost at Isidis to the eleven cities of today. Current work is on starports and city power."
   icon: '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/>'
+  facilities: [horizon-depot, procyon-energy]
+  fields: [行星城市开发, 火星规划]
+  links:
+    - cn: 火星城市档案
+      en: Mars city records
+      url: https://interimm.org/cities/
+    - cn: 火星地图
+      en: Mars map
+      url: https://interimm.org/mars-map/
 - id: agriculture
   cn: 太空农业
   cn_motto: 保障太空生活质量
   en: Space Agriculture
   en_motto: Keeping life in space worth living
+  cn_about: "太空农业系研究怎样在火星上种出足够、好吃的食物：温室、光照、水和二氧化碳的循环。系里的试验田就是端点城的稻芽三号农场。"
+  en_about: "The Department of Space Agriculture studies how to grow enough good food on Mars: greenhouses, light, and the water and carbon dioxide loops. Its test field is the Daoya No. 3 farm at Terminus City."
   icon: '<path d="M12 21V11"/><path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 14c0-3-2.5-5.5-6-5.5 0 3 2.5 5.5 6 5.5z"/>'
+  facilities: [terminus-farm]
+  fields: [太空农业]
 - id: science
   cn: 基础科学
   cn_motto: 泛太阳系合作，更长的基线
   en: Fundamental Science
   en_motto: Solar-system-wide cooperation, longer baselines
+  cn_about: "基础科学系利用地球和火星之间的距离做研究：两颗行星相距越远，望远镜的基线就越长，信号也越慢。系里的研讨会从行星际通信开始，一直讨论到深空阵列。"
+  en_about: "The Department of Fundamental Science works with the distance between Earth and Mars: the farther apart the two planets are, the longer the telescope baseline and the slower the signal. Its seminars started with interplanetary communication and now reach the deep-space array."
   icon: '<circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>'
+  signal: true
+  fields: [基础科学, 星际通信]
 - id: ecology
   cn: 行星生态
   cn_motto: 关注每一个生命
   en: Planetary Ecology
   en_motto: Every life counts
+  cn_about: "行星生态系研究火星上每一个生命赖以生存的系统：城市里的空气、水和微生物，以及刚刚开始的火星改造。系里和天狼城空气工厂一起监测城市的空气。"
+  en_about: "The Department of Planetary Ecology studies the systems every life on Mars depends on: the air, water and microbes of the cities, and the terraforming that has just begun. With the Sirius air works it keeps watch on the cities' air."
   icon: '<circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17"/><path d="M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"/>'
+  facilities: [sirius-air]
+  fields: [行星生态改造, 行星生态]
 - id: exoplanets
   cn: 系外行星
   cn_motto: 遥远的世界，我们终将踏足
   en: Exoplanets
   en_motto: Distant worlds we will one day reach
+  cn_about: "系外行星系整理人类已知的每一颗系外行星，研究哪些世界值得去，以及怎样才能到达。系里的星表和星际移民中心的系外行星档案是同一份。"
+  en_about: "The Department of Exoplanets keeps a record of every exoplanet known, and studies which worlds are worth going to and how to get there. Its catalogue is the same one as the Interplanetary Immigration Center's exoplanet archive."
   icon: '<circle cx="7" cy="17" r="3"/><circle cx="17" cy="7" r="1.5"/><path d="M10 14l5.5-5.5"/><path d="M20 3l1 1M3 21l1-1"/>'
+  fields: [系外行星]
+  links:
+    - cn: 系外行星档案
+      en: Exoplanet archive
+      url: https://exoplanets.interimm.org/

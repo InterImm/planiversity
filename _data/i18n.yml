@@ -36,6 +36,45 @@ cn:
   previous: 上一篇
   next: 下一篇
   source: 源代码
+  dept_kicker: 院系
+  dept_field: 现场
+  dept_field_lede: 这些设施的实时读数来自火星开放设施，每小时更新一次。
+  dept_signal: 信号
+  dept_signal_lede: 此刻地球和火星之间的距离，以及信号单程要走多久。
+  dept_people: 本系研究员
+  dept_people_none: 本系还没有登记的研究员。
+  dept_links: 相关档案
+  dept_enrol: 报读本系
+  open_dashboard: 打开仪表盘
+  design: 设计值
+  loading: 正在读取实时数据…
+  offline: 现在读不到实时数据。可以直接打开火星开放设施的仪表盘。
+  status_operating: 运行
+  status_maintenance: 检修
+  status_reduced: 降负荷
+  status_offline: 停机
+  au: 天文单位
+  distance: 地球至火星
+  delay: 单程信号
+  isidis: 伊希地
+  sol: 火星日
+  nav_enrol: 入学
+  enrol: 入学登记
+  enrol_lede: 选一个院系，写下你的名字，领一张行星大学的学生证。
+  enrol_name: 姓名
+  enrol_name_hint: 会印在学生证上
+  enrol_dept: 院系
+  enrol_city: 住在
+  enrol_make: 生成学生证
+  enrol_download: 下载图片
+  enrol_copy: 复制链接
+  enrol_copied: 已复制
+  enrol_note: 学生证在你的浏览器里生成，名字不会发送到任何地方。链接里带着名字和院系，打开链接会生成同一张学生证。
+  card_title: 学生证
+  card_no: 学号
+  card_enrolled: 入学
+  card_valid: 有效期至
+  card_sol: 火星日
 en:
   name: Planetary University
   center: InterImm
@@ -73,3 +112,42 @@ en:
   previous: Previous
   next: Next
   source: Source
+  dept_kicker: Department
+  dept_field: In the field
+  dept_field_lede: Live readings from Mars Open Facilities, updated every hour.
+  dept_signal: Signal
+  dept_signal_lede: How far apart Earth and Mars are right now, and how long a signal takes one way.
+  dept_people: Researchers
+  dept_people_none: No researchers have registered with this department yet.
+  dept_links: Records
+  dept_enrol: Enrol in this department
+  open_dashboard: Open the dashboard
+  design: design
+  loading: Reading live data…
+  offline: Live data can't be read right now. The Mars Open Facilities dashboard has it.
+  status_operating: Operating
+  status_maintenance: Maintenance
+  status_reduced: Reduced
+  status_offline: Offline
+  au: AU
+  distance: Earth to Mars
+  delay: One-way signal
+  isidis: Isidis
+  sol: Sol
+  nav_enrol: Enrol
+  enrol: Enrolment
+  enrol_lede: Pick a department, write your name and get a Planetary University student ID.
+  enrol_name: Name
+  enrol_name_hint: Printed on the card
+  enrol_dept: Department
+  enrol_city: Living in
+  enrol_make: Make my student ID
+  enrol_download: Download image
+  enrol_copy: Copy link
+  enrol_copied: Copied
+  enrol_note: The card is drawn in your browser and your name is not sent anywhere. The link carries the name and department, so opening it draws the same card.
+  card_title: Student ID
+  card_no: No.
+  card_enrolled: Enrolled
+  card_valid: Valid until
+  card_sol: Sol

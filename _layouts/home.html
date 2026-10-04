@@ -10,7 +10,7 @@ layout: default
       <p class="lede">{{ t.lede }}</p>
       <p class="uni-hero-actions">
         <a class="btn btn-primary" href="#departments">{{ t.departments }} <span aria-hidden="true">↓</span></a>
-        <a class="btn btn-ghost" href="{{ '/join/' | relative_url }}">{{ t.nav_join }}</a>
+        <a class="btn btn-ghost" href="{% if lk == 'en' %}/en{% endif %}/enrol/">{{ t.nav_enrol }}</a>
       </p>
     </div>
     <figure class="uni-seal" aria-hidden="true">
@@ -28,10 +28,11 @@ layout: default
     </header>
     <div class="bento">
       {%- for d in site.data.departments %}
-      <article class="tile" id="dept-{{ d.id }}">
+      <article class="tile card-link-wrap" id="dept-{{ d.id }}">
         <span class="tile-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">{{ d.icon }}</svg></span>
-        <h3 class="tile-title">{{ d[lk] }}</h3>
+        <h3 class="tile-title"><a class="card-link" href="{% if lk == 'en' %}/en{% endif %}/departments/{{ d.id }}/">{{ d[lk] }}</a></h3>
         <p>{% assign motto = lk | append: "_motto" %}{{ d[motto] }}</p>
+        <p class="card-cta" aria-hidden="true">{% if d.facilities %}{{ t.dept_field }} · {{ d.facilities.size }}{% elsif d.signal %}{{ t.dept_signal }}{% else %}{{ t.dept_kicker }}{% endif %} <span>→</span></p>
       </article>
       {%- endfor %}
     </div>

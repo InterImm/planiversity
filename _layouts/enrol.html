@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{%- include lang.html %}
+{%- if lk == "en" %}{% assign base = "/en" %}{% else %}{% assign base = "" %}{% endif %}
+<header class="page-hero">
+  <div class="wrap">
+    <p class="kicker">{{ t.name }} · {{ t.nav_enrol }}</p>
+    <h1>{{ t.enrol }}</h1>
+    <p class="lede">{{ t.enrol_lede }}</p>
+  </div>
+</header>
+
+<div class="section uni-page">
+  <div class="wrap enrol-grid">
+    <form class="card enrol-form" id="enrol-form" autocomplete="off">
+      <label class="field"><span class="kicker">{{ t.enrol_name }}</span>
+        <input type="text" name="n" maxlength="24" required placeholder="{{ t.enrol_name_hint }}"></label>
+      <label class="field"><span class="kicker">{{ t.enrol_dept }}</span>
+        <select name="d">
+          {%- for d in site.data.departments %}<option value="{{ d.id }}">{{ d[lk] }}</option>{% endfor %}
+        </select></label>
+      <label class="field"><span class="kicker">{{ t.enrol_city }}</span>
+        <select name="c">
+          {%- for c in site.data.cities %}<option value="{{ c.id }}">{{ c[lk] }}</option>{% endfor %}
+        </select></label>
+      <p><button class="btn btn-primary" type="submit">{{ t.enrol_make }} <span aria-hidden="true">→</span></button></p>
+      <p class="fine">{{ t.enrol_note }}</p>
+    </form>
+
+    <figure class="enrol-card" id="enrol-card" hidden>
+      <canvas width="1012" height="638" aria-label="{{ t.card_title }}"></canvas>
+      <figcaption>
+        <a class="btn" id="enrol-download" download="planiversity-id.png" href="#">{{ t.enrol_download }}</a>
+        <button class="btn btn-ghost" type="button" id="enrol-copy" data-done="{{ t.enrol_copied }}">{{ t.enrol_copy }}</button>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+<script type="application/json" id="enrol-data">{
+  "lang": {{ lk | jsonify }},
+  "t": { "name": {{ t.name | jsonify }}, "other": {% if lk == "en" %}{{ site.data.i18n.cn.name | jsonify }}{% else %}{{ site.data.i18n.en.name | jsonify }}{% endif %},
+         "title": {{ t.card_title | jsonify }}, "no": {{ t.card_no | jsonify }}, "enrolled": {{ t.card_enrolled | jsonify }},
+         "valid": {{ t.card_valid | jsonify }}, "sol": {{ t.card_sol | jsonify }}, "dept": {{ t.enrol_dept | jsonify }}, "holder": {{ t.enrol_name | jsonify }}, "city": {{ t.enrol_city | jsonify }},
+         "center": {{ t.center | jsonify }} },
+  "depts": { {% for d in site.data.departments %}{{ d.id | jsonify }}: { "name": {{ d[lk] | jsonify }}, "code": {{ d.id | slice: 0, 3 | upcase | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %} },
+  "cities": { {% for c in site.data.cities %}{{ c.id | jsonify }}: {{ c[lk] | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %} }
+}</script>
+<script src="{{ '/assets/js/enrol.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
